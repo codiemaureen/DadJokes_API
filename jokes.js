@@ -10,8 +10,10 @@ const buttonText = [
     'stop it.',
     'please stop',
     'That was the worst',
+    'Not Funny',
 ];
 
+//fetch a random joke
 async function fetchJoke(){
     //turn loader on
     loader.classList.remove('hidden');
@@ -29,6 +31,7 @@ async function fetchJoke(){
     return data;
 };
 
+//generate a random response
 function randomItemFromArray(arr, not){
     const item = arr[Math.floor(Math.random() * arr.length)];
     if(item === not){
@@ -38,6 +41,7 @@ function randomItemFromArray(arr, not){
     return item;
 }
 
+//generate jokes when button is clicked
 async function handleClick(){
     const { joke } = await fetchJoke();
     jokeHolder.textContent = joke;
